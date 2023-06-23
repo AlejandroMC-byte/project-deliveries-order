@@ -1,6 +1,24 @@
 import './Header.css'
-export function Header(){
-    
+import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+
+class Header extends Component{
+      cerrarSesion=()=>{
+        cookies.remove('id', {path: "/"});
+        cookies.remove('apellido_paterno', {path: "/"});
+        cookies.remove('apellido_materno', {path: "/"});
+        cookies.remove('nombre', {path: "/"});
+        cookies.remove('username', {path: "/"});
+        window.location.href='./';
+      }
+
+      componentDidMount() {
+          if(!cookies.get('username')){
+              window.location.href="./";
+          }
+      }
+  render(){
     return (
       <header id="nav-menu" aria-label="navigation bar">
         <div className="container">
@@ -30,7 +48,7 @@ export function Header(){
           </div>
           <div className="nav-end">
             <div className="right-container">
-              <a className="btn btn-primary" href="/">SALIR</a>
+              <a className="btn btn-primary" onClick={()=>this.cerrarSesion()}>SALIR</a>
             </div>
             <button
               id="hamburger"
@@ -44,5 +62,6 @@ export function Header(){
         </div>
       </header>
     );
-
+  }
 }
+export default Header;
