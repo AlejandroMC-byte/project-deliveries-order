@@ -35,7 +35,7 @@ class Header extends Component{
             <ul className="menu-bar">
               
               <li>
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/Trabajadores">
                   Trabajadores
                 </a>
               </li>

@@ -34,7 +34,7 @@ class Formulario extends Component{
     }
 
   iniciarSesion=async()=>{
-    alert(this.state.form.password)
+    // alert(this.state.form.password)
       await axios.get(baseUrl, {params: {username: this.state.form.username, password: md5(this.state.form.password)}})
       .then(response=>{
         //alert(response)
