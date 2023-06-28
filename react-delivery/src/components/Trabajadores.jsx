@@ -11,7 +11,7 @@ class Trabajadores extends Component{
       <div className="menu">
         <ul>
           <li><a className= "boton-enlace" href="/verTrabajadores">VER TRABAJADORES</a></li>
-          <li><a className= "boton-enlace" href="#">CREAR / ELIMINAR TRABAJADORES</a></li>
+          <li><a className= "boton-enlace" href="/EditarTrabajadores">CREAR / ELIMINAR TRABAJADORES</a></li>
         </ul>
       </div>
       </>

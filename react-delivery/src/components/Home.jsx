@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cookies from 'universal-cookie';
 import Header from './Header'
-import PersonasTable from './PersonasTable'
+import ImageCenter from './ImageCenter';
 const cookies = new Cookies();
 
 class Home extends Component{
@@ -25,9 +25,11 @@ class Home extends Component{
         <div>
             <Header />
             <br /><br />
-            <h1>BIENVENIDO A TU HOME DE ENVIO DE PAQUETES</h1>
-            <br /><br />
-            <PersonasTable/>
+            <h1 style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>BIENVENIDO A TU HOME DE ENVIO DE PAQUETES</h1>
+            <br />
+            <p style={{marginLeft: '1.5rem'}}>Arriba puedes encontrar tus opciones como usuario ADMIN</p>
+            
+            <ImageCenter />      
         </div>
     )
     }

@@ -44,6 +44,11 @@ class Header extends Component{
                   Asignar trabajos
                 </a>
               </li>
+              <li>
+                <a className="nav-link" href="/MapaTrabajadores">
+                  ¡MAPA!
+                </a>
+              </li>
             </ul>
           </div>
           <div className="nav-end">

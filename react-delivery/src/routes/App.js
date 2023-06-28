@@ -5,6 +5,8 @@ import Home from '../components/Home';
 import '../App.css'
 import Trabajadores from '../components/Trabajadores';
 import PersonasTable from '../components/PersonasTable';
+import EditarTrabajadores from '../components/EditarTrabajadores';
+import MapaTrabajadores from '../components/MapaTrabajadores';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route exact path="/home" element={<Home/>}/>
         <Route exact path="/trabajadores" element={<Trabajadores/>}/>
         <Route exact path="/verTrabajadores" element={<PersonasTable/>}/>
+        <Route exact path="/EditarTrabajadores" element={<EditarTrabajadores/>}/>
+        <Route exact path="/MapaTrabajadores" element={<MapaTrabajadores/>}/>
       </Routes>
     </BrowserRouter>
     

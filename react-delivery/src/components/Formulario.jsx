@@ -42,7 +42,7 @@ class Formulario extends Component{
       })
       .then(response=>{
           if(response.length>0){
-            //console.log('aqui llegue')
+            console.log('aqui llegue')
               var respuesta=response[0];
               cookies.set('id', respuesta.id, {path: "/"});
               cookies.set('Apellido', respuesta.apellido_paterno, {path: "/"});
