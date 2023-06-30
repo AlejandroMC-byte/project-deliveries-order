@@ -7,6 +7,7 @@ import Trabajadores from '../components/Trabajadores';
 import PersonasTable from '../components/PersonasTable';
 import EditarTrabajadores from '../components/EditarTrabajadores';
 import MapaTrabajadores from '../components/MapaTrabajadores';
+import AsignarTrabajos from '../components/AsignarTrabajos';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/verTrabajadores" element={<PersonasTable/>}/>
         <Route exact path="/EditarTrabajadores" element={<EditarTrabajadores/>}/>
         <Route exact path="/MapaTrabajadores" element={<MapaTrabajadores/>}/>
+        <Route exact path="/AsignarTrabajos" element={<AsignarTrabajos/>}/>
       </Routes>
     </BrowserRouter>
     

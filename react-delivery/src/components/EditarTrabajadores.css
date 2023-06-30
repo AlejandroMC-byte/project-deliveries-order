@@ -16,6 +16,7 @@ label {
 }
 
 input[type='text'],
+input[type='number'],
 input[type='email'] {
   padding: 5px;
   font-size: 16px;

@@ -6,15 +6,14 @@ const cookies = new Cookies();
 class Header extends Component{
       cerrarSesion=()=>{
         cookies.remove('id', {path: "/"});
-        cookies.remove('apellido_paterno', {path: "/"});
-        cookies.remove('apellido_materno', {path: "/"});
-        cookies.remove('nombre', {path: "/"});
-        cookies.remove('username', {path: "/"});
+        cookies.remove('login', {path: "/"});
+        cookies.remove('password', {path: "/"});
+        cookies.remove('direccion', {path: "/"});
         window.location.href='./';
       }
 
       componentDidMount() {
-          if(!cookies.get('username')){
+          if(!cookies.get('login')){
               window.location.href="./";
           }
       }
@@ -36,11 +35,11 @@ class Header extends Component{
               
               <li>
                 <a className="nav-link" href="/Trabajadores">
-                  Trabajadores
+                  Mensajeros
                 </a>
               </li>
               <li>
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/AsignarTrabajos">
                   Asignar trabajos
                 </a>
               </li>

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './routes/App';
 import {StrictMode} from 'react';

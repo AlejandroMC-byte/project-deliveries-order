@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 //import { useState } from "react"
 import React, { Component } from 'react';
 
-const baseUrl="http://localhost:3001/usuarios";
+const baseUrl="http://localhost:8080/user";
 const cookies = new Cookies();
 // const [nombre, setNombre]= useState("")
 // const [password, setPassword]= useState("")
@@ -14,7 +14,7 @@ class Formulario extends Component{
   
   state={
       form:{
-          username: '',
+          login: '',
           password: ''
       }
     } 
@@ -34,21 +34,23 @@ class Formulario extends Component{
     }
 
   iniciarSesion=async()=>{
+    // alert(this.state.form.login)
     // alert(this.state.form.password)
-      await axios.get(baseUrl, {params: {username: this.state.form.username, password: md5(this.state.form.password)}})
+      await axios.get(baseUrl, {params: {login: this.state.form.login, password: md5(this.state.form.password)}})
       .then(response=>{
-        //alert(response)
+        // console.log('aqui llegue')
+        // alert(response)
           return response.data;
       })
       .then(response=>{
           if(response.length>0){
-            console.log('aqui llegue')
+            // console.log('aqui llegue')
               var respuesta=response[0];
               cookies.set('id', respuesta.id, {path: "/"});
-              cookies.set('Apellido', respuesta.apellido_paterno, {path: "/"});
-              cookies.set('nombre', respuesta.nombre, {path: "/"});
-              cookies.set('username', respuesta.username, {path: "/"});
-              alert(`Bienvenido ${respuesta.nombre} ${respuesta.apellido}`);
+              cookies.set('login', respuesta.login, {path: "/"});
+              cookies.set('password', respuesta.password, {path: "/"});
+              cookies.set('direccion', respuesta.direccion, {path: "/"});
+              alert(`Bienvenido ${this.state.form.login}`);
               window.location.href="./home";
           }else{
               alert('El usuario o la contraseña no son correctos');
@@ -60,7 +62,7 @@ class Formulario extends Component{
   }
 
   componentDidMount(){
-      if(cookies.get('username')){
+      if(cookies.get('login')){
           window.location.href="./home";
       }
   }
@@ -76,7 +78,7 @@ class Formulario extends Component{
                 type="text"
                 // value={nombre}
                 onChange={this.handleChange}
-                name="username"
+                name="login"
                 placeholder="Usuario"
               />
               <input
