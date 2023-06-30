@@ -1,0 +1,36 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.campo {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'] {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+button[type='submit'] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type='submit']:hover {
+  background-color: #555;
+}

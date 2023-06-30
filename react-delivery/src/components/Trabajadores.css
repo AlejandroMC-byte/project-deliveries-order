@@ -1,0 +1,39 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 10px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  .boton-enlace {
+    display: inline-block;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-enlace:hover {
+    background-color: #555;
+  }
