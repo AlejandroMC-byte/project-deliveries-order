@@ -8,21 +8,24 @@ class EditarTrabajadores extends Component {
   
   state ={
     form:{
+      id:6,
       login:'',
       password:'',
       direccion:'',
       correo:'',
-      telefono:'',
+      telefono: 0,
       tipoUsuario:0,
     },
     form_mensajero:{
+      id:3,
       nombre: '',
-      identificacion: '',
+      identificacion: 0,
       idUsuario: 0,
     }
 
   }
   handleChange=async e=>{
+    e.preventDefault()
     await this.setState({
      form: {
        ...this.state.form,
@@ -34,8 +37,11 @@ class EditarTrabajadores extends Component {
   }
 
   guardarUsuario=async()=>{
-    await axios.post(baseUrl,this.state.form)
-    .then((response)=>{
+    try {
+      console.log(this.state.form);
+      console.log(this.state.form_mensajero);
+      await axios.post(baseUrl,this.state.form)
+      .then((response)=>{
       this.setState({
         form_mensajero:{
           ...this.state.form_mensajero,
@@ -43,8 +49,24 @@ class EditarTrabajadores extends Component {
         }
       })
       axios.post("http://localhost:8080/Mensajero/Crear",this.state.form_mensajero)
-      alert('USUARIO Y MENSAJERO CREADO EXITOSAMENTE')
-    })
+      this.setState({
+        form:{
+          ...this.state.form,
+          [this.state.form.id]: this.state.form.id +=1
+        }
+      })
+      this.setState({
+        form_mensajero:{
+          ...this.state.form_mensajero,
+          [this.state.form_mensajero.idUsuario]: this.state.form.idUsuario +=1
+        }
+      })
+        alert('USUARIO Y MENSAJERO CREADO EXITOSAMENTE')
+      })
+    } catch (error) {
+      console.error(error)
+    }
+    
   }
 
   render(){
@@ -128,7 +150,7 @@ class EditarTrabajadores extends Component {
             <div className="form-group">
               <label htmlFor="telefonoInput">Telefono:</label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 id="telefonoInput"
                 onChange={this.handleChange}

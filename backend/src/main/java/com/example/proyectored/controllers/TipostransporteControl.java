@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/tipoTrans")
-
+@CrossOrigin("*")
 public class TipostransporteControl {
     @Autowired
     private TipostransporteServi tipostransporteServi;

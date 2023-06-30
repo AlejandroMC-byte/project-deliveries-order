@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/sucursales")
-
+@CrossOrigin("*")
 public class SucursalesControl {
     @Autowired
     private SucursalesServi sucursalesServi;
