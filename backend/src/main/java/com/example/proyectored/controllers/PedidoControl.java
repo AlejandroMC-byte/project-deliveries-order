@@ -24,6 +24,7 @@ public class PedidoControl {
     }
     @RequestMapping("/Crear")
     @PostMapping
+    @CrossOrigin("*")
     public PedidoMod  savePedido(@RequestBody PedidoMod Pedido){
 
         return this.PedidoServi.savePedido(Pedido);

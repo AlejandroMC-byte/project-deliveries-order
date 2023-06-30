@@ -9,8 +9,7 @@ class Trabajadores extends Component{
       <Header/>
       <div className="menu">
         <ul>
-          <li><a className= "boton-enlace" href="/verTrabajadores">VER TRABAJADORES</a></li>
-          <li><a className= "boton-enlace" href="/EditarTrabajadores">CREAR / ELIMINAR TRABAJADORES</a></li>
+          <li><a className= "boton-enlace" href="/verTrabajadores">VER /CREAR / ACTUALIZAR / ELIMINAR USUARIOS</a></li>
         </ul>
       </div>
       </>
